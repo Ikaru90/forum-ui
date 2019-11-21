@@ -1,23 +1,17 @@
 <template>
-  <div  class="large-text">
-    <p>Obi-Wan Kenobi: {{ Kenobi }}</p>
-    <p>General Grievous: {{ Grievous }}</p>
+  <div>
+    <v-menu />
+    <router-view />
   </div>
 </template>
 
 <script>
+import menu from "./components/menu";
+
   export default {
-    data() {
-      return {
-        Kenobi: 'Hello there',
-        Grievous: 'General Kenobi',
-      }
+    name: 'app',
+    components: {
+      "v-menu": menu
     }
   }
 </script>
-
-<style>
-  .large-text {
-    font-size: 50px;
-  }
-</style>

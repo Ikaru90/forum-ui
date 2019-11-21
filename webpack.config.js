@@ -13,6 +13,7 @@ module.exports = {
   devtool: "eval-source-map",
   devServer: {
     contentBase: path.join(__dirname, '../src'),
+    historyApiFallback: true,
     port: 3000
   },
   resolve: {
