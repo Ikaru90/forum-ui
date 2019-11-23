@@ -1,9 +1,7 @@
 <template>
   <div>
-    <router-link to="/kenobi">
-      Kenobi
-    </router-link> | <router-link to="/grievous">
-      Grievous
+    <router-link to="/messages">
+      To messages
     </router-link>
   </div>
 </template>

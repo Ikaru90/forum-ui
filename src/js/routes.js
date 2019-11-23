@@ -1,5 +1,4 @@
-const kenobi = () => import('./components/kenobi');
-const grievous = () => import('./components/grievous');
+const messages = () => import('./components/messages');
 const notFound = () => import('./components/notFound');
 
 const routes = [
@@ -7,14 +6,9 @@ const routes = [
     path: '/',
   },
   {
-    path: '/kenobi',
-    name: 'kenobi',
-    component: kenobi
-  },
-  {
-    path: '/grievous',
-    name: 'grievous',
-    component: grievous
+    path: '/messages',
+    name: 'messages',
+    component: messages
   },
   {
     path: '*',

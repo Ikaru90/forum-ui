@@ -13,11 +13,16 @@ module.exports = {
   devtool: "eval-source-map",
   devServer: {
     contentBase: path.join(__dirname, '../src'),
-    historyApiFallback: true,
-    port: 3000
+    port: 3000,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080'
+      }
+    },
+    historyApiFallback: true
   },
   resolve: {
-    extensions: ['*', '.js', '.vue'],
+    extensions: ['*', '.js', '.vue']
   },
   module: {
     rules: [
