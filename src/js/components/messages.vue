@@ -1,6 +1,6 @@
 <template>
   <div  class="default-text">
-    <p>messages: {{ messages }}</p>
+    <p v-for="message in messages" v-bind:key="message.id">message: {{ message.text }}</p>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
     }
   },
   created() {
-    this.$http.get('/api/message').then(result => console.log(result));
+    this.$http.get('/api/message').then(result => this.messages = result.body);
   }
 }
 </script>
