@@ -22,7 +22,7 @@ module.exports = {
     historyApiFallback: true
   },
   resolve: {
-    extensions: ['*', '.js', '.vue']
+    extensions: ['*', '.js', '.vue'],
   },
   module: {
     rules: [

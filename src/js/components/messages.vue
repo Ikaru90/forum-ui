@@ -1,6 +1,8 @@
 <template>
   <div  class="default-text">
-    <p v-for="message in messages" v-bind:key="message.id">message: {{ message.text }}</p>
+    <p v-for="message in messages" v-bind:key="message.id">
+      {{ message.id }}: {{ message.text }} from {{ message.creationDate }}
+    </p>
   </div>
 </template>
 
