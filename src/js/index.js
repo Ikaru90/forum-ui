@@ -3,6 +3,8 @@ import VueRouter from 'vue-router';
 import VueResource from 'vue-resource';
 import App from './App';
 import routes from './routes';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
