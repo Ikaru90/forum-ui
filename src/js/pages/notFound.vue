@@ -8,6 +8,9 @@
       <div>
         Page Not Found
       </div>
+      <router-link to="/">
+        <button type="button" class="btn btn-primary">To Main Page</button>
+      </router-link>
     </div>
   </div>
 </template>
@@ -16,7 +19,7 @@
   .center {
     width: 100%;
     text-align: center;
-    font-size: 40px;
+    font-size: 60px;
   }
 
   .orange-text {
