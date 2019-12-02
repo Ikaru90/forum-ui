@@ -3,14 +3,10 @@
     <div class="col">
       <ul v-if="username" class="nav justify-content-end">
         <li class="nav-item">
-          <router-link to="/profile">
-            <a class="nav-link active" href="#">{{ username }}</a>
-          </router-link>
+          <a class="nav-link active" href="#" data-toggle="modal" data-target="#profile-modal">{{ username }}</a>
         </li>
         <li class="nav-item">
-          <router-link to="/logout">
-            <a class="nav-link active" href="#">Log out</a>
-          </router-link>  
+          <a class="nav-link active" href="#" @click="onLogout">Log out</a>
         </li>
       </ul>
       <ul v-else class="nav justify-content-end">
@@ -22,21 +18,31 @@
         </li>  
       </ul>
     </div>
-    <v-login />
-    <v-signup />
+    <v-login v-bind:onLogin="onLogin" />
+    <v-signup v-bind:onSignup="onSignup" />
+    <v-profile v-bind:username="username" v-bind:user="user" />
   </div>
 </template>
 
 <script>
 import login from "./modals/login";
 import signup from "./modals/signup";
+import profile from "./modals/profile";
 
 export default {
   name: 'menu',
-  props: ['username'],
+  props: [
+    'user',
+    'username',
+    'onSignup',
+    'onLogin',
+    'onLogout',
+    'onLogout'
+  ],
   components: {
     "v-login": login,
-    "v-signup": signup
+    "v-signup": signup,
+    "v-profile": profile,
   }
 }
 </script>
