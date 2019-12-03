@@ -13,6 +13,8 @@ module.exports = {
   devtool: "eval-source-map",
   devServer: {
     contentBase: path.join(__dirname, '../src'),
+    publicPath: '/',
+    host: '0.0.0.0',
     port: 3000,
     proxy: {
       '/api': {
