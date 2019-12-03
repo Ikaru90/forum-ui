@@ -2,7 +2,6 @@
   <div class="container-fluid">
     <v-menu
       v-bind:user="user"
-      v-bind:username="username"
       v-bind:onSignup="handleSignup"
       v-bind:onLogin="handleLogin"
       v-bind:onLogout="handleLogout"
@@ -23,24 +22,23 @@ export default {
   data() {
     return {
       user: null,
-      username: null,
     }
   },
   created() {
-    this.username = localStorage.getItem('username');
+    this.user = JSON.parse(localStorage.getItem('user'));
   },
   methods: {
-    handleSignup(username) {
-      localStorage.setItem('username', username);
-      this.username = username;
+    handleSignup(user) {
+      localStorage.setItem('user', JSON.stringify(user));
+      this.user = user;
     },
     handleLogin(user) {
-      localStorage.setItem('username', username);
+      localStorage.setItem('user', JSON.stringify(user));
       this.user = user;
     },
     handleLogout() {
-      localStorage.removeItem('username');
-      this.username = null;
+      localStorage.removeItem('user');
+      this.user = null;
 
       this.$notify({
         group: 'auth',

@@ -1,9 +1,9 @@
 <template>
   <div class="row">
     <div class="col">
-      <ul v-if="username" class="nav justify-content-end">
+      <ul v-if="user" class="nav justify-content-end">
         <li class="nav-item">
-          <a class="nav-link active" href="#" data-toggle="modal" data-target="#profile-modal">{{ username }}</a>
+          <a class="nav-link active" href="#" data-toggle="modal" data-target="#profile-modal">{{ user.username }}</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="#" @click="onLogout">Log out</a>
@@ -20,7 +20,7 @@
     </div>
     <v-login v-bind:onLogin="onLogin" />
     <v-signup v-bind:onSignup="onSignup" />
-    <v-profile v-bind:username="username" v-bind:user="user" />
+    <v-profile v-bind:user="user" />
   </div>
 </template>
 
@@ -33,7 +33,6 @@ export default {
   name: 'menu',
   props: [
     'user',
-    'username',
     'onSignup',
     'onLogin',
     'onLogout',

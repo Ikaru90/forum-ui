@@ -9,7 +9,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <p>{{ firstName || user && user.firstName }} {{ lastName || user && user.lastName }}</p>
+          <p>{{ user && user.firstName }} {{ user && user.lastName }}</p>
         </div>
       </div>
     </div>
@@ -25,10 +25,10 @@ export default {
       lastName: null,
     }
   },
-  props: ['username', 'user'],
+  props: ['user'],
   created() {
-    if (this.username) {
-      this.$http.post('/api/authorization/userInfo', { 'username': this.username }).then((result) => {
+    if (this.user && this.user.username) {
+      this.$http.post('/api/authorization/userInfo', { 'username': this.user.username }).then((result) => {
         this.firstName = result.body.firstName;
         this.lastName = result.body.lastName;
       });
