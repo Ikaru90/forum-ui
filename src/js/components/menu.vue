@@ -3,18 +3,18 @@
     <div class="col">
       <ul v-if="user" class="nav justify-content-end">
         <li class="nav-item">
-          <a class="nav-link active" href="#" data-toggle="modal" data-target="#profile-modal">{{ user.username }}</a>
+          <a class="nav-link active" href="/" data-toggle="modal" data-target="#profile-modal">{{ user.username }}</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#" @click="onLogout">Log out</a>
+          <a class="nav-link active" href="/" @click="onLogout">Log out</a>
         </li>
       </ul>
       <ul v-else class="nav justify-content-end">
         <li class="nav-item">
-          <a class="nav-link active" href="#" data-toggle="modal" data-target="#signup-modal">Sign up</a>
+          <a class="nav-link active" href="/" data-toggle="modal" data-target="#signup-modal">Sign up</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#" data-toggle="modal" data-target="#login-modal">Log in</a>
+          <a class="nav-link active" href="/" data-toggle="modal" data-target="#login-modal">Log in</a>
         </li>  
       </ul>
     </div>

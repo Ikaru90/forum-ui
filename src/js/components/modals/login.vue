@@ -64,8 +64,9 @@ export default {
           this.username = null;
           this.password = null;
           this.error = null;
+        } else {
+          this.error = "Incorrect username or password";  
         }
-        
       }).catch(() => {
         this.error = "Incorrect username or password";
         this.password = null;

@@ -68,22 +68,24 @@ export default {
           password: this.password,
         }
 
-        this.$http.post('/api/authorization/registration', data).then(() => {
-          this.$notify({
-            group: 'auth',
-            type: 'success',
-            text: 'User created successfully'
-          });
+        this.$http.post('/api/authorization/registration', data).then((result) => {
+          if (result.body && result.body) {
+            this.$notify({
+              group: 'auth',
+              type: 'success',
+              text: 'User created successfully'
+            });
 
-          this.onSignup(this.username);
-          $('#signup-modal').modal('hide');
+            this.onSignup(result.body);
+            $('#signup-modal').modal('hide');
 
-          this.error = null;
-          this.username = null;
-          this.firstName = null;
-          this.lastName = null;
-          this.password = null;
-          this.confirmPassword = null;
+            this.error = null;
+            this.username = null;
+            this.firstName = null;
+            this.lastName = null;
+            this.password = null;
+            this.confirmPassword = null;
+          }
         }).catch(() => {
           this.error = "Username is taken";
         });
