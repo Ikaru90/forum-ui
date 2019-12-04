@@ -68,7 +68,7 @@ export default {
           password: this.password,
         }
 
-        this.$http.post('/api/authorization/registration', data).then((result) => {
+        this.$http.post('/api/auth/registration', data).then((result) => {
           if (result.body && result.body) {
             this.$notify({
               group: 'auth',

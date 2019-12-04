@@ -50,7 +50,7 @@ export default {
         password: this.password,
       }
 
-      this.$http.post('/api/authorization/login', data).then((result) => {
+      this.$http.post('/api/auth/login', data).then((result) => {
         if (result.body && result.body.username) {
           this.$notify({
             group: 'auth',
