@@ -18,9 +18,9 @@
         </li>  
       </ul>
     </div>
-    <v-login v-bind:onLogin="onLogin" />
-    <v-signup v-bind:onSignup="onSignup" />
-    <v-profile v-bind:user="user" />
+    <LoginModal v-bind:onLogin="onLogin" />
+    <SignupModal v-bind:onSignup="onSignup" />
+    <ProfileModal v-bind:user="user" />
   </div>
 </template>
 
@@ -39,9 +39,9 @@ export default {
     'onLogout'
   ],
   components: {
-    "v-login": login,
-    "v-signup": signup,
-    "v-profile": profile,
+    "LoginModal": login,
+    "SignupModal": signup,
+    "ProfileModal": profile,
   }
 }
 </script>

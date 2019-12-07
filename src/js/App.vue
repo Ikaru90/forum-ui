@@ -6,6 +6,7 @@
       v-bind:onLogin="handleLogin"
       v-bind:onLogout="handleLogout"
     />
+    <hr>
     <notifications group="auth" position="top left" />
     <router-view />
   </div>
