@@ -41,6 +41,7 @@
 
 <script>
 import $ from 'jquery';
+import { api } from 'utils/api';
 
 export default {
   name: 'signup',
@@ -68,15 +69,16 @@ export default {
           password: this.password,
         }
 
-        this.$http.post('/api/auth/registration', data).then((result) => {
-          if (result.body && result.body) {
+        
+        api.POST('/api/auth/registration', data).then((result) => {
+          if (result.data) {
             this.$notify({
               group: 'auth',
               type: 'success',
               text: 'User created successfully'
             });
 
-            this.onSignup(result.body);
+            this.onSignup(result.data);
             $('#signup-modal').modal('hide');
 
             this.error = null;

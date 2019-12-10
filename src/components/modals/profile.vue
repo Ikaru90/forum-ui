@@ -25,14 +25,6 @@ export default {
       lastName: null,
     }
   },
-  props: ['user'],
-  created() {
-    if (this.user && this.user.username) {
-      this.$http.post('/api/auth/userInfo', { 'username': this.user.username }).then((result) => {
-        this.firstName = result.body.firstName;
-        this.lastName = result.body.lastName;
-      });
-    }
-  },
+  props: ['user']
 }
 </script>

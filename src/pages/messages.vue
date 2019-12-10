@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import { api } from 'utils/api';
+
 export default {
   name: 'messages',
   data() {
@@ -23,7 +25,7 @@ export default {
   },
   methods: {
     messagesFetch() {
-      this.$http.get('/api/messages').then(result => this.messages = result.body);
+      api.GET('/api/message').then(result => this.messages = result.body);
     },
     handleSend() {
       this.$http.post('/api/messages', {text: this.message}).then(() => {

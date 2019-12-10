@@ -29,6 +29,7 @@
 
 <script>
 import $ from 'jquery';
+import { api } from 'utils/api';
 
 export default {
   name: 'login',
@@ -50,25 +51,23 @@ export default {
         password: this.password,
       }
 
-      this.$http.post('/api/auth/login', data).then((result) => {
-        if (result.body && result.body.username) {
+      api.POST('/api/auth/login', data).then((result) => {
+        if (result.data && result.data.username) {
           this.$notify({
             group: 'auth',
             type: 'success',
             text: 'Login successfully'
           });
 
-          this.onLogin(result.body);
+          this.onLogin(result.data);
           $('#login-modal').modal('hide');
 
           this.username = null;
           this.password = null;
           this.error = null;
-        } else {
-          this.error = "Incorrect username or password";  
         }
-      }).catch(() => {
-        this.error = "Incorrect username or password";
+      }).catch((error) => {
+        this.error = error.response.data.errorMessage;
         this.password = null;
       });
     },

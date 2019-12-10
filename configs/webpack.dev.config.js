@@ -3,11 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
-  entry: './src/js/index.js',
+  entry: './src/index.js',
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: './index.html'
     })
   ],
   devtool: "eval-source-map",
@@ -25,6 +25,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['*', '.js', '.vue'],
+    alias: {
+      utils: path.resolve(__dirname, '../src/utils'),
+    }
   },
   module: {
     rules: [
