@@ -25,16 +25,16 @@ export default {
   },
   methods: {
     messagesFetch() {
-      api.GET('/api/message').then(result => this.messages = result.body);
+      api.GET('/api/message').then(result => this.messages = result.data);
     },
     handleSend() {
-      this.$http.post('/api/messages', {text: this.message}).then(() => {
+      api.POST('/api/message', {text: this.message}).then(() => {
         this.message = null;
         this.messagesFetch();
       });
     },
     handleDelete(id) {
-      this.$http.delete(`/api/messages/${id}`).then(() => {
+      api.DELETE(`/api/message/${id}`).then(() => {
         this.messagesFetch();
       });
     }

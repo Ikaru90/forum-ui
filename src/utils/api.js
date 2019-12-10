@@ -33,7 +33,19 @@ const POST = (url, data) => {
   return axios(axiosParameters);
 };
 
+const DELETE = (url) => {
+  const axiosParameters = {
+    method: 'delete',
+    url
+  };
+
+  addAuthorizationHeader(axiosParameters);
+
+  return axios(axiosParameters);
+};
+
 export const api = {
   GET,
-  POST
+  POST,
+  DELETE
 }
