@@ -4,7 +4,7 @@
       <div class="orange-text">
         404
       </div>
-      <img src="resources/notFound.png" />
+      <img v-bind:src="notFound" />
       <div>
         Page Not Found
       </div>
@@ -14,6 +14,19 @@
     </div>
   </div>
 </template>
+
+<script>
+import notFound from 'resources/notFound.png';
+
+export default {
+  name: 'notFound',
+  data() {
+    return {
+      notFound
+    }
+  },
+}
+</script>
 
 <style>
   .center {

@@ -6,8 +6,13 @@ const routes = [
     path: '/',
   },
   {
-    path: '/messages',
-    name: 'messages',
+    path: '/theme',
+    name: 'theme',
+    component: messages
+  },
+  {
+    path: '/theme/:id',
+    name: 'theme-id',
     component: messages
   },
   {

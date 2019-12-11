@@ -11,6 +11,10 @@ module.exports = {
     })
   ],
   devtool: "eval-source-map",
+  output: {
+
+    publicPath: '/'
+  },
   devServer: {
     contentBase: path.join(__dirname, '../src'),
     publicPath: '/',
@@ -27,6 +31,7 @@ module.exports = {
     extensions: ['*', '.js', '.vue'],
     alias: {
       utils: path.resolve(__dirname, '../src/utils'),
+      resources: path.resolve(__dirname, '../src/resources')
     }
   },
   module: {
@@ -43,11 +48,15 @@ module.exports = {
       },
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
+        loader: 'vue-loader'
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ['file-loader']
       }
     ]
   }

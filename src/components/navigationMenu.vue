@@ -30,7 +30,7 @@ import signup from "./modals/signup";
 import profile from "./modals/profile";
 
 export default {
-  name: 'menu',
+  name: 'navigationMenu',
   props: [
     'user',
     'onSignup',

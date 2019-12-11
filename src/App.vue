@@ -1,9 +1,9 @@
 <template>
   <div class="container-fluid">
-    <Menu
+    <NavigationMenu
       v-bind:user="user"
-      v-bind:onSignup="handleSignup"
-      v-bind:onLogin="handleLogin"
+      v-bind:onSignup="setCredentials"
+      v-bind:onLogin="setCredentials"
       v-bind:onLogout="handleLogout"
     />
     <notifications group="auth" position="top left" />
@@ -12,12 +12,12 @@
 </template>
 
 <script>
-import menu from "./components/menu";
+import navigationMenu from "./components/navigationMenu";
 
 export default {
   name: 'app',
   components: {
-    "Menu": menu
+    "NavigationMenu": navigationMenu
   },
   data() {
     return {
@@ -34,22 +34,12 @@ export default {
     }
   },
   methods: {
-    handleSignup(credentials) {
+    setCredentials(credentials) {
       localStorage.setItem('username', JSON.stringify(credentials.username));
       localStorage.setItem('firstName', JSON.stringify(credentials.firstName));
       localStorage.setItem('lastName', JSON.stringify(credentials.lastName));
       localStorage.setItem('token', JSON.stringify(credentials.token));
-      this.user = {
-        username: credentials.username,
-        firstName: credentials.firstName,
-        lastName: credentials.lastName
-      };
-    },
-    handleLogin(credentials) {
-      localStorage.setItem('username', JSON.stringify(credentials.username));
-      localStorage.setItem('firstName', JSON.stringify(credentials.firstName));
-      localStorage.setItem('lastName', JSON.stringify(credentials.lastName));
-      localStorage.setItem('token', JSON.stringify(credentials.token));
+
       this.user = {
         username: credentials.username,
         firstName: credentials.firstName,
