@@ -69,7 +69,6 @@ export default {
           password: this.password,
         }
 
-        
         api.POST('/api/auth/registration', data).then((result) => {
           if (result.data) {
             this.$notify({

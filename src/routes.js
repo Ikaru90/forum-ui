@@ -3,7 +3,7 @@ const notFound = () => import('./pages/notFound');
 
 const routes = [
   {
-    path: '/',
+    path: '/'
   },
   {
     path: '/theme',
@@ -19,7 +19,7 @@ const routes = [
     path: '*',
     name: 'notFound',
     component: notFound
-  },
+  }
 ];
 
 export default routes;

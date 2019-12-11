@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Notifications from 'vue-notification'
+import Notifications from 'vue-notification';
 import App from './App';
 import routes from './routes';
 import 'bootstrap';

@@ -4,11 +4,11 @@ const addAuthorizationHeader = (axiosParameters) => {
   const token = JSON.parse(localStorage.getItem('token'));
 
   if (token) {
-    axiosParameters['headers'] = { Authorization: `Bearer_${token}`}
+    axiosParameters['headers'] = { Authorization: `Bearer_${token}` };
   }
 
   return axiosParameters;
-}
+};
 
 const GET = (url) => {
   const axiosParameters = {
@@ -48,4 +48,4 @@ export const api = {
   GET,
   POST,
   DELETE
-}
+};
