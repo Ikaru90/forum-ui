@@ -3,7 +3,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Log In</h5>
+          <h5 class="modal-title">Sign Up</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -12,24 +12,24 @@
           <form @submit="handleSignup">
             <div v-if="error" class="error">{{ error }}</div>
             <div class="form-group">
-              <label for="username"><b>Username</b></label>
-              <input required type="text" minlength="4" class="form-control" v-model="username" placeholder="Enter Username" autocomplete="off">
+              <label for="user"><b>Username</b></label>
+              <input required type="text" minlength="4" id="user" class="form-control" v-model="username" placeholder="Enter Username" autocomplete="off">
             </div>
             <div class="form-group">
               <label for="firstName"><b>FirstName</b></label>
-              <input required type="text" class="form-control" v-model="firstName" placeholder="Enter firstName" autocomplete="off">
+              <input required type="text" class="form-control" id="firstName" v-model="firstName" placeholder="Enter firstName" autocomplete="off">
             </div>
             <div class="form-group">
               <label for="lastName"><b>LastName</b></label>
-              <input required type="text" class="form-control" v-model="lastName" placeholder="Enter lastName" autocomplete="off">
+              <input required type="text" class="form-control" id="lastName" v-model="lastName" placeholder="Enter lastName" autocomplete="off">
             </div>
             <div class="form-group">
-              <label for="password"><b>Password</b></label>
-              <input required type="password" minlength="4" class="form-control" v-model="password" placeholder="Password">
+              <label for="pass"><b>Password</b></label>
+              <input required type="password" minlength="4" id="pass" class="form-control" v-model="password" placeholder="Password">
             </div>
             <div class="form-group">
               <label for="confirmPassword"><b>Confirm Password</b></label>
-              <input required type="password" minlength="4" class="form-control" v-model="confirmPassword" placeholder="Confirm Password">
+              <input required type="password" minlength="4" id="confirmPassword" class="form-control" v-model="confirmPassword" placeholder="Confirm Password">
             </div>
             <button type="submit" class="btn btn-block btn-primary" data-dismiss="signup-modal">Sign Up</button>
           </form>

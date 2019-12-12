@@ -6,6 +6,8 @@
       v-bind:onLogin="setCredentials"
       v-bind:onLogout="handleLogout"
     />
+    <hr>
+    <ThemesList />
     <notifications group="auth" position="top left" />
     <router-view />
   </div>
@@ -13,11 +15,13 @@
 
 <script>
 import navigationMenu from "./components/navigationMenu";
+import themesList from "./pages/themesList";
 
 export default {
   name: 'app',
   components: {
-    "NavigationMenu": navigationMenu
+    "NavigationMenu": navigationMenu,
+    "ThemesList": themesList
   },
   data() {
     return {
