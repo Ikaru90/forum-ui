@@ -1,14 +1,16 @@
-// const messages = () => import('./pages/messages');
+const themesList = () => import('./pages/themesList');
 const notFound = () => import('./pages/notFound');
+const theme = () => import('./pages/theme');
 
 const routes = [
   {
-    path: '/'
+    path: '/',
+    component: themesList
   },
   {
     path: '/theme/:id',
     name: 'theme-id',
-    component: notFound
+    component: theme
   },
   {
     path: '*',

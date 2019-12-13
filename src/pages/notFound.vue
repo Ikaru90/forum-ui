@@ -9,7 +9,7 @@
         Page Not Found
       </div>
       <router-link to="/">
-        <button type="button" class="btn btn-primary">To Main Page</button>
+        <button type="button" class="btn btn-lg btn-dark">To themes list</button>
       </router-link>
     </div>
   </div>

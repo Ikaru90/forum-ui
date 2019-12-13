@@ -54,5 +54,6 @@ export default {
 <style>
   .menu-text {
     font-size: 30px;
+    color: black !important;
   }
 </style>

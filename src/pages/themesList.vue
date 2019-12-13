@@ -1,10 +1,22 @@
 <template>
-  <div  class="default-text">
-    <p v-for="theme in themes" v-bind:key="theme.id">
-      ({{ theme.initiator }})
-      {{ theme.name }} - {{ theme.text }}
-    </p>
-  </div>
+  <table class="table table-hover text-center">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Initiator</th>
+        <th scope="col">Theme</th>
+        <th scope="col">Date Created</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="pointer" v-for="theme in themes" v-bind:key="theme.id" @click="() => toTheme(theme.id)">
+        <th scope="row">{{ theme.id }}</th>
+        <td>{{ theme.initiator }}</td>
+        <td>{{ theme.name }}</td>
+        <td>{{ theme.created }}</td>
+      </tr>
+    </tbody>
+  </table>
 </template>
 
 <script>
@@ -21,6 +33,9 @@ export default {
     messagesFetch() {
       api.GET('/api/theme').then(result => this.themes = result.data);
     },
+    toTheme(id) {
+      this.$router.push(`/theme/${id}`);
+    }
   },
   created() {
     this.messagesFetch();
@@ -29,7 +44,7 @@ export default {
 </script>
 
 <style>
-.default-text {
-  font-size: 15px;
-}
+  .pointer {
+    cursor: pointer;
+  }
 </style>
